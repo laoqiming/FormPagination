@@ -1,5 +1,5 @@
 {
-  "name": "FormPagination",
+  "name": "form-pagination",
   "description": "以form-get形式提交的bootstrap分页插件",
   "version":"0.0.1",
   "main": "",
@@ -11,7 +11,7 @@
     "jquery",
     "bootstrap",
     "pagination",
-    "formPagination"
+    "form-pagination"
   ],
   "homepage": "https://github.com/laoqiming/FormPagination",
   "ignore": [

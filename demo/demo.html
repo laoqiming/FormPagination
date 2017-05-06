@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <title>分页插件</title>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="../form-pagination.min.css">
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../dist/form-pagination.min.css">
 </head>
 <body>
     <div class="container">
@@ -62,8 +62,8 @@ $(function($){
                     <div class="panel-heading">自定义分页内容(显示6个分页链接，右对齐)</div>
                     <div class="panel-body">
                         <form class="form-pagination form-horizontal">
-                            <input type="hidden" name="mt-page" class="form-pagination-page" value="1">
-                            <input type="hidden" name="mt-recordcount" class="form-pagination-recordcount" value="100">
+                            <input type="hidden" name="page" class="form-pagination-page" value="1">
+                            <input type="hidden" name="recordcount" class="form-pagination-recordcount" value="100">
                             <input type="hidden" class="form-pagination-showpagecount" value="6">
 
                             <div class="form-group">
@@ -95,7 +95,7 @@ $(function($){
                                 <div class="col-sm-3 pull-right">
                                     <div class="input-group">
                                         <div class="input-group-addon">每页显示</div>
-                                        <select class="form-pagination-pagesize form-control" name="mt-pagesize"><option value="5">5</option><option value="10">10</option></select>
+                                        <select class="form-pagination-pagesize form-control" name="pagesize"><option value="5">5</option><option value="10">10</option></select>
                                         <div class="input-group-addon">条记录</div>
                                     </div>
                                 </div>
@@ -120,7 +120,7 @@ $(function($){
     &lt;input type="hidden" class="form-pagination-showpagecount" value="6"&gt; &lt;!-- name 属性可不设置 --&gt;
             &lt;div class="input-group"&gt;
                 &lt;div class="input-group-addon"&gt;每页显示&lt;/div&gt;
-                    &lt;select class="form-pagination-pagesize form-control" name="mt-pagesize"&gt;&lt;option value="5"&gt;5&lt;/option&gt;&lt;option value="10"&gt;10&lt;/option&gt;&lt;/select&gt;
+                    &lt;select class="form-pagination-pagesize form-control" name="pagesize"&gt;&lt;option value="5"&gt;5&lt;/option&gt;&lt;option value="10"&gt;10&lt;/option&gt;&lt;/select&gt;
                     &lt;!-- 设置 name 属性,允许用户修改每页记录数（选择） --&gt;
                     &lt;div class="input-group-addon"&gt;条记录&lt;/div&gt;
                 &lt;/div&gt;
@@ -140,7 +140,7 @@ $(function($){
            &lt;/form&gt;
 &lt;script&gt;
 $(function($){
-    $('.form-pagination').mtPagination();
+    $('.form-pagination').formPagination();
 });
 &lt;/script&gt;
                         </textarea>
@@ -150,9 +150,9 @@ $(function($){
         </div>
     </div>
 
-    <script src="jquery.js"></script>
-    <script src="bootstrap/js/bootstrap.js"></script>
-    <script src="../form-pagination.min.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../dist/form-pagination.min.js"></script>
     <script>
             $('.form-pagination').formPagination();
     </script>

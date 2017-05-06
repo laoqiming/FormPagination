@@ -38,7 +38,7 @@
 
             //把页面请求参数导入form，以不丢失页面参数。
             for(var p in urlParams){
-                if(!_s.find('[name='+p+']').size()){
+                if(!_s.find('[name='+p+']').length){
                     paramHtml.push('<input type="hidden" name="'+p+'" value="'+urlParams[p]+'">');
                 }
             };
@@ -75,14 +75,14 @@
             //console.log(pagecount + '|'+_pageStart+'|'+ _pageEnd + '|' + showpagecount);
 
             //处理分页栏
-            if($('.form-pagination',this).size()==0){
+            if($('.form-pagination',this).length==0){
                 $('<div class="form-pagination"></div>').appendTo(this);
             }
 
             if(recordcount>0){
 
                 //有数据记录时，渲染分页控件
-                if($('.form-pagination-paging',this).size()==0){
+                if($('.form-pagination-paging',this).length==0){
                     $('<div class="form-pagination-stat">共有<b class="form-pagination-stat-recordcount">0</b>条记录</div> \
                         <ul class="pagination form-pagination-paging">\
                         </ul>\

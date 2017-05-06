@@ -4,10 +4,6 @@ var gulp = require('gulp'),
 	rename = require('gulp-rename'),
 	md5plus = require('gulp-md5-plus');
 
-gulp.task('copy-demo',function(){
-	gulp.src('demo/**')
-		.pipe(gulp.dest('dist/demo'));
-});
 gulp.task('js-process', function() {
   	gulp.src(['src/*.js'])
   		.pipe(uglify())
@@ -21,4 +17,4 @@ gulp.task('css-process', function() {
   		.pipe(gulp.dest("dist"));
   		
 });
-gulp.task('default',['copy-demo','js-process','css-process']);
+gulp.task('default',['js-process','css-process']);
