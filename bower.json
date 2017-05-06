@@ -1,0 +1,28 @@
+{
+  "name": "FormPagination",
+  "description": "以form-get形式提交的bootstrap分页插件",
+  "version":"0.0.1",
+  "main": "",
+  "authors": [
+    "劳启明 <laoqiming@qq.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "jquery",
+    "bootstrap",
+    "pagination",
+    "formPagination"
+  ],
+  "homepage": "https://github.com/laoqiming/FormPagination",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "private": true,
+  "dependencies": {
+    "bootstrap": "3.3.x"
+  }
+}
