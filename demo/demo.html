@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>分页插件</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../form-pagination.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">默认调用</div>
+                    <div class="panel-body">
+                        <form class="form-pagination form-horizontal">
+                            <input type="hidden" name="page" class="form-pagination-page" value="1">
+                            <input type="hidden" class="form-pagination-pagesize" value="12">
+                            <input type="hidden" class="form-pagination-recordcount" value="30">
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">性别</label>
+                                <div class="col-sm-4">
+                                    <div class="checkbox-inline"><label><input type="radio" name="sex2" value="1" checked>男</label></div>
+                                    <div class="checkbox-inline"><label><input type="radio" name="sex2" value="0">女</label></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">类型</label>
+                                <div class="col-sm-4">
+                                    <div class="checkbox-inline"><label><input type="checkbox" name="type2" value="1" checked>供应商</label></div>
+                                    <div class="checkbox-inline"><label><input type="checkbox" name="type2" value="0">门店</label></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">关键词</label>
+                                <div class="col-sm-4">
+                                    <input type="text" name="q2" value="" placeholder="请输入搜索关键词" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button type="submit" class="btn btn-primary">搜索</button>
+                                </div>
+                            </div>
+                        </form>
+                        <textarea class="form-control" rows="8">&lt;form class="form-pagination form-horizontal"&gt;
+    &lt;input type="hidden" name="page" class="form-pagination-page" value="1"&gt; &lt;!-- name 属性根据后台当前页变量设置 --&gt;
+    &lt;input type="hidden" class="form-pagination-pagesize" value="12"&gt; &lt;!-- name 属性可不设置,当允许用户修改每页记录数时可设置（输入或选择） --&gt;
+    &lt;input type="hidden" class="form-pagination-recordcount" value="30"&gt; &lt;!-- name 属性不设置，由后台程序填充 --&gt;
+&lt;/form&gt;
+&lt;script&gt;
+$(function($){
+    $('.form-pagination').formPagination();
+});
+&lt;/script&gt;
+                        </textarea>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">自定义分页内容(显示6个分页链接，右对齐)</div>
+                    <div class="panel-body">
+                        <form class="form-pagination form-horizontal">
+                            <input type="hidden" name="mt-page" class="form-pagination-page" value="1">
+                            <input type="hidden" name="mt-recordcount" class="form-pagination-recordcount" value="100">
+                            <input type="hidden" class="form-pagination-showpagecount" value="6">
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">性别</label>
+                                <div class="col-sm-4">
+                                    <div class="checkbox-inline"><label><input type="radio" name="sex" value="1" checked>男</label></div>
+                                    <div class="checkbox-inline"><label><input type="radio" name="sex" value="0">女</label></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">类型</label>
+                                <div class="col-sm-4">
+                                    <div class="checkbox-inline"><label><input type="checkbox" name="type" value="1" checked>供应商</label></div>
+                                    <div class="checkbox-inline"><label><input type="checkbox" name="type" value="0">门店</label></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">关键词</label>
+                                <div class="col-sm-4">
+                                    <input type="text" name="q" value="" placeholder="请输入搜索关键词" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button type="submit" class="btn btn-primary">搜索</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 pull-right">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">每页显示</div>
+                                        <select class="form-pagination-pagesize form-control" name="mt-pagesize"><option value="5">5</option><option value="10">10</option></select>
+                                        <div class="input-group-addon">条记录</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-pagination text-right">
+                                <div class="form-pagination-stat">共有记录<b class="form-pagination-stat-recordcount">0</b>条 </div>
+                                <ul class="form-pagination-paging pagination"></ul>
+                                <div class="form-pagination-gotopage-wrap">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            跳转到：第
+                                        </div>
+                                        <select class="form-pagination-gotopage form-control"></select>
+                                        <div class="input-group-addon">页</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <textarea class="form-control" rows="8">&lt;form class="form-pagination form-horizontal"&gt;
+    &lt;input type="hidden" name="page" class="form-pagination-page" value="1"&gt; &lt;!-- name 属性根据后台当前页变量设置 --&gt;
+    &lt;input type="hidden" class="form-pagination-recordcount" value="100"&gt; &lt;!-- name 属性不设置，由后台程序填充 --&gt;
+    &lt;input type="hidden" class="form-pagination-showpagecount" value="6"&gt; &lt;!-- name 属性可不设置 --&gt;
+            &lt;div class="input-group"&gt;
+                &lt;div class="input-group-addon"&gt;每页显示&lt;/div&gt;
+                    &lt;select class="form-pagination-pagesize form-control" name="mt-pagesize"&gt;&lt;option value="5"&gt;5&lt;/option&gt;&lt;option value="10"&gt;10&lt;/option&gt;&lt;/select&gt;
+                    &lt;!-- 设置 name 属性,允许用户修改每页记录数（选择） --&gt;
+                    &lt;div class="input-group-addon"&gt;条记录&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;div class="form-pagination text-right"&gt;
+                &lt;div class="form-pagination-stat"&gt;共有记录&lt;b class="form-pagination-stat-recordcount"&gt;0&lt;/b&gt;条 &lt;/div&gt;
+                &lt;ul class="form-pagination-paging pagination"&gt;&lt;/ul&gt;
+                &lt;div class="form-pagination-gotopage-wrap"&gt;
+                    &lt;div class="input-group"&gt;
+                        &lt;div class="input-group-addon"&gt;
+                            跳转到：第
+                        &lt;/div&gt;
+                        &lt;select class="form-pagination-gotopage form-control"&gt;&lt;/select&gt;
+                        &lt;div class="input-group-addon"&gt;页&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+           &lt;/form&gt;
+&lt;script&gt;
+$(function($){
+    $('.form-pagination').mtPagination();
+});
+&lt;/script&gt;
+                        </textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="jquery.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="../form-pagination.min.js"></script>
+    <script>
+            $('.form-pagination').formPagination();
+    </script>
+</body>
+</html>

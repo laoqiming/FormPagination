@@ -1,0 +1,12 @@
+.pagination{
+    vertical-align:middle;
+}
+.mt-pagination-stat{
+    display:inline-block;
+    vertical-align: middle;
+}
+.mt-pagination-gotopage-wrap{
+    display:inline-block;
+    vertical-align: middle;
+}
+.mt-pagination-gotopage-wrap>.input-group{max-width:200px;}
